@@ -7,11 +7,15 @@ import ResetPassword from "./pages/auth/ResetPassword";
 import VerifyOtp from "./pages/auth/VerifyOtp";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import SignUp from "./pages/auth/SignUp";
+import Navbar from "./components/common/Navbar";
 
 const App = () => {
   return (
     <div>
       <Toaster position="top-center" />
+
+      {/* <Navbar /> */}
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
