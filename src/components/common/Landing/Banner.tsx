@@ -6,11 +6,11 @@ export default function Banner() {
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-10 bg-orange-50 rounded-2xl shadow-md px-6 md:px-10 py-10">
         {/* === Image Box (Left Side) === */}
         <div className="flex justify-start md:w-1/2 w-full">
-          <div className="relative w-[16rem] sm:w-[20rem] md:w-[24rem] h-[22rem] sm:h-[26rem] md:h-[28rem] bg-gradient-to-b from-orange-400 to-orange-200 rounded-t-full overflow-hidden flex items-end justify-center mx-auto md:mx-0">
+          <div className="relative w-[16rem] sm:w-[20rem] md:w-[24rem] h-[22rem] sm:h-[26rem] md:h-[30rem] bg-gradient-to-b from-orange-400 to-orange-200 rounded-t-full overflow-hidden flex items-end justify-center mx-auto md:mx-0">
             <img
               src={images.chef2}
               alt="chef"
-              className="absolute bottom-0 w-auto max-w-[90%] h-auto object-contain"
+              className="absolute bottom-0 w-auto max-w-[100%] h-auto object-contain"
             />
           </div>
         </div>
