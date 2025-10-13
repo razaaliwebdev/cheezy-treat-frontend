@@ -1,6 +1,7 @@
 import Hero from "@/components/common/Landing/Hero";
 import DailySpecial from "@/components/common/Landing/DailySpecial";
 import Banner from "@/components/common/Landing/Banner";
+import NewLatter from "@/components/common/utils/NewsLatter";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <DailySpecial />
       <Banner />
+      <NewLatter />
     </div>
   );
 };
