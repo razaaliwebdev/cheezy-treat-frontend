@@ -18,9 +18,9 @@ export default function Newsletter() {
           <input
             type="email"
             placeholder="Enter your email address"
-            className="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-700 placeholder:text-gray-400"
+            className="w-full sm:w-2/3 px-4 py-3 rounded border border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-700 placeholder:text-gray-400"
           />
-          <button className="w-full sm:w-auto px-6 py-3 bg-orange-400 text-white font-semibold rounded-lg hover:bg-orange-400 transition-colors">
+          <button className="w-full sm:w-auto px-6 py-3 bg-orange-400 text-white font-semibold rounded hover:bg-orange-400 transition-colors">
             Subscribe
           </button>
         </div>
