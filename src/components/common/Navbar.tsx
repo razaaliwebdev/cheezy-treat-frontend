@@ -168,7 +168,7 @@ export default function Navbar() {
                         </button>
                       ) : (
                         <button
-                          onClick={() => navigate("/login")}
+                          onClick={() => navigate("/auth/login")}
                           className="px-4 py-2 bg-orange-100 text-orange-500 rounded font-medium hover:bg-orange-200 transition-all duration-150"
                         >
                           Login
