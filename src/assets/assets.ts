@@ -1,6 +1,7 @@
 import logo from "./images/logo.png";
 import hero from './images/heroSlides/hero.jpg';
 import heroMb from './images/heroSlides/heroMb.jpg'
+import chef2 from './images/chef2.png';
 
 // Daily Special
 import crust from './images/crust.jpg';
@@ -8,10 +9,17 @@ import fajita from './images/fajita.jpg';
 import tandoori from './images/tandoori.jpg';
 import bazinga from './images/bazinga.jpg';
 
+// Icons
+import delivery from "./images/icons/delivery.png"
+import leaf from './images/icons/leaf.png';
+import money from './images/icons/money.png';
+import heart from './images/icons/heart.png'
+
 export const images = {
   logo,
   hero,
-  heroMb
+  heroMb,
+  chef2
 }
 // Daily Special
 interface DailySpecial {
@@ -150,3 +158,39 @@ export const faqs: FaqCategory[] = [
   },
 ];
 
+
+// Why We Are
+interface WhyWeAre {
+  id: number,
+  title: string,
+  description: string,
+  image: string
+}
+
+export const whyWeAre: WhyWeAre[] = [
+  {
+    id: 1,
+    title: "Fast Delivery",
+    description: "We deliver your pizza in 30-45 minutes",
+    image: `${delivery}`,
+  },
+  {
+    id: 2,
+    title: "Freshness Guaranteed",
+    description: "Fresh produce straight from the source.",
+    image: `${leaf}`
+  },
+  {
+    id: 3,
+    title: "Affordable Prices",
+    description: "Affordable PricesQuality groceries at unbeatable prices.",
+    image: `${money}`
+  },
+  {
+    id: 4,
+    title: "Trusted by Thousands",
+    description: "Trusted by thousands of happy customers.",
+    image: `${heart}`
+  }
+
+]
