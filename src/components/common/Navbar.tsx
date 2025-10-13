@@ -22,6 +22,7 @@ const navLinks: NavLinks[] = [
   { title: "Home", link: "/" },
   { title: "Menu", link: "/menu" },
   { title: "Deals", link: "/deals" },
+  { title: "About Us", link: "/about-us" },
 ];
 
 export default function Navbar() {
