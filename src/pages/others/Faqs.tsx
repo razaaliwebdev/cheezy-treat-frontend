@@ -22,7 +22,7 @@ export default function Faqs() {
 
   return (
     <section>
-      <div className="fag-header">
+      <div className="fag-header py-10">
         <h2 className="text-center mb-4 text-2xl md:text-4xl font-semibold">
           Frequently Asked Questions
         </h2>

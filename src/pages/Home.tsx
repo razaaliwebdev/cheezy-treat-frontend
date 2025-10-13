@@ -1,6 +1,5 @@
 import Hero from "@/components/common/Landing/Hero";
 import DailySpecial from "@/components/common/Landing/DailySpecial";
-import Faqs from "@/components/common/Landing/Faqs";
 import Banner from "@/components/common/Landing/Banner";
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
       <Hero />
       <DailySpecial />
       <Banner />
-      <Faqs />
     </div>
   );
 };
