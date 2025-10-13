@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="md:h-[85vh] h-[88vh] w-full">
+    <section className="md:h-[85vh] h-[80vh] w-full">
       <div className="h-full flex items-center justify-center">
         <div className="h-full w-full rounded overflow-hidden relative">
           {/* Desktop Image */}
