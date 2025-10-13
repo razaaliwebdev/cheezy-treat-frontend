@@ -1,8 +1,10 @@
 import { Spinner } from "@/components/ui/spinner";
+import { setAuthData } from "@/redux/slices/authSlice";
 import axios from "axios";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -11,6 +13,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -32,14 +35,15 @@ const Login = () => {
         }
       );
       if (response.status === 200) {
+        dispatch(setAuthData({ user: response.data.user }));
         toast.success("Login successful");
         navigate("/");
         setEmail("");
         setPassword("");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log("Failed to login", error);
-      toast.error("Failed to login. Please try again.");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }

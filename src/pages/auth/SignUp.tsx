@@ -43,9 +43,9 @@ const SignUp = () => {
         setEmail("");
         setPassword("");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log("Failed to register", error);
-      toast.error("Failed to register. Please try again.");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }

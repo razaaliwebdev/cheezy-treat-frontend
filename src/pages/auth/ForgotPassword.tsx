@@ -28,9 +28,9 @@ const ForgotPassword = () => {
         navigate("/auth/verify-otp");
         setEmail("");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log("forgot failed", error);
-      toast.error("Failed to send OTP to reset Password. Please try again.");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }

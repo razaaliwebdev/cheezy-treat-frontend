@@ -38,9 +38,9 @@ const VerifyOtp = () => {
         toast.success("OTP verified successfully");
         navigate("/auth/reset-password");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.log("Failed to send otp", error);
-      toast.error("Failed to send otp. Please try again.");
+      toast.error(error.response.data.message);
     } finally {
       setLoading(false);
     }
