@@ -49,10 +49,18 @@ const UserAvatar = () => {
         <DropdownMenuContent className="w-40 mr-5">
           <DropdownMenuLabel className="">My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => navigate("/profile")}
+            className="cursor-pointer"
+          >
             Profile
           </DropdownMenuItem>
-          <DropdownMenuItem className="cursor-pointer">Orders</DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => navigate("/profile")}
+            className="cursor-pointer"
+          >
+            Orders
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem
             onClick={handleLogout}
