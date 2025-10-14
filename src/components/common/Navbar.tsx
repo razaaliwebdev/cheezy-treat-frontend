@@ -162,7 +162,7 @@ export default function Navbar() {
                     <div className="mt-6 flex flex-col items-center gap-6">
                       {user ? (
                         <button
-                          onClick={() => navigate("/my-orders")}
+                          onClick={() => navigate("/profile")}
                           className="px-4 py-2 bg-orange-100 text-orange-500 rounded font-medium hover:bg-orange-200 transition-all duration-150"
                         >
                           My Orders
@@ -193,8 +193,8 @@ export default function Navbar() {
                   <div className="flex items-center gap-3">
                     <UserAvatar />
                     <div>
-                      <p className="font-medium text-gray-800">John Doe</p>
-                      <p className="text-sm text-gray-500">john@example.com</p>
+                      <p className="font-medium text-gray-800">{user?.name}</p>
+                      <p className="text-xs text-gray-500">{user?.email}</p>
                     </div>
                   </div>
 
