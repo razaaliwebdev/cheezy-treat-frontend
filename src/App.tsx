@@ -10,6 +10,7 @@ import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/utils/Footer";
 import Faqs from "./pages/others/Faqs";
 import About from "./pages/aboutUs/About";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/auth/reset-password" element={<ResetPassword />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/faqs" element={<Faqs />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       {/* Footer  */}
       <Footer />
