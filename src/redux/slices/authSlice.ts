@@ -19,8 +19,10 @@ interface AuthState {
     // token: string | null;
 }
 
+
+const storeUser = localStorage.getItem("user");
 const initialState: AuthState = {
-    user: null
+    user: storeUser ? JSON.stringify(storeUser) : null
     // token: null
 }
 
@@ -31,6 +33,7 @@ const authSlice = createSlice(
         reducers: {
             setAuthData: (state, action: PayloadAction<{ user: User }>) => {
                 state.user = action.payload.user;
+                localStorage.setItem("user", JSON.stringify(action.payload.user))
                 // state.token = action.payload.token;
             },
 
