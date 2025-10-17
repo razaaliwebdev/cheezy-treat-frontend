@@ -19,7 +19,7 @@ export default function Profile() {
   const { user } = useSelector((state: RootState) => state.auth);
   const [name, setName] = useState(user?.name || "Jhon");
   const [email, setEmail] = useState(user?.email || "john@123.com");
-  const [phone, setPhone] = useState(user?.phone || "03**********");
+  const [phone, setPhone] = useState(user?.phone || "03");
   const [profileImage, setProfileImage] = useState(
     user?.profileImage ||
       "https://cdn-icons-png.flaticon.com/128/149/149071.png"
@@ -163,7 +163,7 @@ export default function Profile() {
       // Refresh data
       await getUserPfile();
     } catch (error) {
-      console.error("❌ Update failed:", error.response?.data || error.message);
+      console.error("❌ Update failed:", error:.response?.data || error.message);
       setSuccessMsg(`❌ ${error.response?.data?.message || "Update failed"}`);
     } finally {
       setUpdating(false);
