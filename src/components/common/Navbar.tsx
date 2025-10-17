@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import type { NavLinks } from "../../types/types";
 import { images } from "../../assets/assets.ts";
 import { Menu, ShoppingBasket, ShoppingCart } from "lucide-react";
@@ -28,9 +29,20 @@ const navLinks: NavLinks[] = [
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const dispatch = useDispatch();
   const { user } = useSelector((state: RootState) => state.auth);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -49,13 +61,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav>
-      <div className="md:px-14 px-6 md:py-4 py-3 border-b border-orange-100 flex items-center justify-between ">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-md bg-white/60 shadow-sm" : "bg-transparent"
+      }`}
+    >
+      <div className="md:px-14 px-6 md:py-3.5 py-3 border-b border-orange-100 flex items-center justify-between">
         {/* Logo */}
-        <div
-          onClick={() => navigate("/")}
-          className="logo cursor-pointer  w-20"
-        >
+        <div onClick={() => navigate("/")} className="logo cursor-pointer w-20">
           <img
             src={images.logo}
             className="h-full w-full object-cover scale-110"
@@ -66,7 +79,7 @@ export default function Navbar() {
         <div className="nav-links hidden md:block">
           <ul className="flex">
             {navLinks.map((lnk) => {
-              const isActive = location.pathname === lnk.link; // check if current path
+              const isActive = location.pathname === lnk.link;
               return (
                 <li
                   key={lnk.title}
@@ -82,7 +95,7 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Auth Button && Cart */}
-        <div className=" items-center gap-6 hidden md:flex">
+        <div className="items-center gap-6 hidden md:flex">
           {user ? (
             <button
               onClick={() => navigate("/my-orders")}
