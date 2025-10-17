@@ -163,7 +163,7 @@ export default function Profile() {
       // Refresh data
       await getUserPfile();
     } catch (error) {
-      console.error("❌ Update failed:", error:.response?.data || error.message);
+      console.error("❌ Update failed:", error.response?.data || error.message);
       setSuccessMsg(`❌ ${error.response?.data?.message || "Update failed"}`);
     } finally {
       setUpdating(false);
