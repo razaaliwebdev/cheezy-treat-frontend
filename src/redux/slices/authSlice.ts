@@ -1,5 +1,13 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
+interface Address {
+    addressLine: string;
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+}
 
 interface User {
     _id: string
@@ -9,7 +17,7 @@ interface User {
     isActive: boolean;
     phone: string;
     isVerified: boolean;
-    orders: string[];
+    orders: Address[];
     address: string[];
     profileImage: string;
 }
